@@ -12,7 +12,7 @@ degree to which the image needs to be enhanced. In addition, the ‘k’ is the 
 clusters  to  which  that  the  algorithm  attempts  to  segment  the  image.  The  user  can 
 modify this value if the segmentation image is not desirable. 
 
-	The k_means_clustering module consists of the required functions and 
+The k_means_clustering module consists of the required functions and 
 algorithms for image segmentation and post-processing. Upon reading the image, the 
 algorithm initially performs the contrast enhancement. This image is then fed to the k-
 means clustering algorithm for image segmentation. Then a binary mask is applied on 
@@ -25,7 +25,7 @@ processed images and CSV files containing the number of detected cells, fluoresc
 intensity,  area,  height  and  width  coordinate,  and  Euclidean  distance  to  neighboring 
 cells for each detected cell. 
 
-	The user is required to provide the the necessary information on parameters.py 
+The user is required to provide the the necessary information on parameters.py 
 and  execute  the  k_means_clustering.py.  Upon  running,  the  algorithm  displays  the 
 processed  images  to  the  user  after  the  completion  of  each  image  processing  step, 
 namely contrast-enhancement, image segmentation, cell body masks, cell body 
