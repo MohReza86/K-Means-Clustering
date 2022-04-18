@@ -29,7 +29,6 @@ from skimage.feature import canny
 from skimage import io, img_as_float, img_as_ubyte
 
 
-
 ####################### PARRT 1: IMAGE SEGMENTATION #######################
 
 # Reading the original image from the source path
@@ -80,6 +79,7 @@ def K_means_clustering(contrasted_image, original_image, k=4):
 
         contrasted_image: this contrast-enhanced image is used for detectig the cluster
         original_image: the cluster masks are overlaid on the original image
+        k = number of clusters (set to 4 by default)
 
      '''
 
@@ -123,7 +123,6 @@ label_image = measure.label(segmented_image > threshold, connectivity = original
 
 
 
-
 ####################### PARRT 2: POST-PROCESSING #######################
 
 # Step 1: Removing objects with sizes less than the cell type of interest from the labeled image
@@ -139,8 +138,6 @@ mask = morphology.closing(mask)
 
 # overlaying the mask (i.e., processed detected cell bodies) on the original image
 #mask_img_overlay = label2rgb(mask, image=original_image, bg_label=0)
-
-
 
 
 
@@ -163,13 +160,9 @@ area = df['area']
 x = df['centroid-1'].tolist()
 y = df['centroid-0'].tolist()
 
-x_integ = []
-for i in x:
-    x_integ.append(int(i))
+x_integ = [i for i in x x_integ.append(int(i))]
 
-y_integ = []
-for i in y:
-    y_integ.append(int(i))
+y_integ = [i for i in y y_integ.append(int(i))]
 
 # coordinates of the detected cells 
 coordinates = list(zip(x_integ, y_integ))
@@ -185,9 +178,7 @@ def norm_data(data):
 
 norm_inten = norm_data(intensity)
 
-new_norm_inten = []
-for i in norm_inten:
-    new_norm_inten.append(abs(i-1))
+new_norm_inten = [i for i in norm_inten new_norm_inten.append(abs(i-1))]
 
 original_image = read_img(input_path)  
 
@@ -237,9 +228,6 @@ plt.show()
 plt.imshow(heat_map)
 plt.title('Heat Map')
 plt.show()
-
-
-
 
 
 ####################### PARRT 4: SAVING OUTPUT IMAGES AND WRITING THE DATA TO CSV FILES #######################
