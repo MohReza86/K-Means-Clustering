@@ -31,3 +31,15 @@ and  execute  the  k_means_clustering.py.  Upon  running,  the  algorithm  displ
 processed  images  to  the  user  after  the  completion  of  each  image  processing  step, 
 namely contrast-enhancement, image segmentation, cell body masks, cell body 
 contours and heat map. 
+
+The following figure shows cells segmentation steps on an example image. 
+
+
+
+<img width="388" alt="Screen Shot 2022-05-18 at 1 32 29 PM" src="https://user-images.githubusercontent.com/19292138/169029349-341841e8-5bb3-4277-99d7-4d6db04dae70.png">
+
+
+
+
+
+
