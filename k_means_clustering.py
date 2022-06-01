@@ -29,7 +29,7 @@ from skimage.feature import canny
 from skimage import io, img_as_float, img_as_ubyte
 
 
-####################### PARRT 1: IMAGE SEGMENTATION #######################
+####################### PART 1: IMAGE SEGMENTATION #######################
 
 # Reading the original image from the source path
 def read_img(path):
@@ -123,7 +123,7 @@ label_image = measure.label(segmented_image > threshold, connectivity = original
 
 
 
-####################### PARRT 2: POST-PROCESSING #######################
+####################### PART 2: POST-PROCESSING #######################
 
 # Step 1: Removing objects with sizes less than the cell type of interest from the labeled image
 if ChAT:
@@ -141,7 +141,7 @@ mask = morphology.closing(mask)
 
 
 
-####################### PARRT 3: PROPERTIES OF SEGMENTED CELLS  #######################
+####################### PART 3: PROPERTIES OF SEGMENTED CELLS  #######################
  
 # defining the properites of the segmented image
 props = measure.regionprops_table(mask, original_image_gray, properties = ['label', 'area', 'centroid', 'mean_intensity'])
@@ -230,7 +230,7 @@ plt.title('Heat Map')
 plt.show()
 
 
-####################### PARRT 4: SAVING OUTPUT IMAGES AND WRITING THE DATA TO CSV FILES #######################
+####################### PART 4: SAVING OUTPUT IMAGES AND WRITING THE DATA TO CSV FILES #######################
 
 # saving the image with marked detected cells 
 plt.imsave(f"{output_path}/{marked_cells}{output_image_format}", cells_marked)
